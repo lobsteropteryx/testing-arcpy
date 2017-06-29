@@ -26,7 +26,7 @@ class MyModuleTest(unittest.TestCase):
         arcpy.Delete_management(self.TEST_GDB)
 
     def test_adds_sum_field(self):
-        feature_class = self.setup_data()
+        feature_class = self.setup_data('SumData')
         field_name = 'SUM'
         field_names = [field.name for field in arcpy.ListFields(feature_class)]
         self.assertTrue(field_name in field_names)
