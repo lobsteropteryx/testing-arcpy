@@ -2,6 +2,8 @@ import os
 import unittest
 import arcpy
 
+from my_project.my_module import add_sum_field
+
 
 class MyModuleTest(unittest.TestCase):
 
@@ -28,5 +30,6 @@ class MyModuleTest(unittest.TestCase):
     def test_adds_sum_field(self):
         feature_class = self.setup_data('SumData')
         field_name = 'SUM'
+        add_sum_field(feature_class)
         field_names = [field.name for field in arcpy.ListFields(feature_class)]
         self.assertTrue(field_name in field_names)
