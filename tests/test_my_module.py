@@ -33,3 +33,10 @@ class MyModuleTest(unittest.TestCase):
         add_sum_field(feature_class)
         field_names = [field.name for field in arcpy.ListFields(feature_class)]
         self.assertTrue(field_name in field_names)
+
+    def test_calculates_sum(self):
+        feature_class = self.setup_data('SumData')
+        add_sum_field(feature_class)
+        with arcpy.da.SearchCursor(feature_class, ['SUM']) as cursor:
+            for row in cursor:
+                self.assertEqual(row[0], 2)
