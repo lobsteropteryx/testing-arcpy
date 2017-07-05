@@ -1,6 +1,7 @@
 from unittest import TestCase
 from my_project.updater import init_cap
 
+
 class TestCapper(TestCase):
 
     def test_returns_empty_string_if_field_is_empty(self):
@@ -17,7 +18,6 @@ class TestCapper(TestCase):
         expected = 'Foo Bar'
         actual = init_cap('foo bar')
         self.assertEqual(actual, expected)        
-
 
     def test_does_not_captalize_words_that_start_with_numbers(self):
         expected = '3g'
