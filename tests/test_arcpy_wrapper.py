@@ -1,8 +1,8 @@
 from unittest import TestCase
 from mock import patch, MagicMock
-from arcpy_wrapper import list_workspaces_for_mxd
+from my_project.arcpy_wrapper import list_workspaces_for_mxd
 
-@patch('my_project.arcpy_helper.arcpy')
+@patch('my_project.arcpy_wrapper.arcpy')
 class TestListDataSources(TestCase):
 
     def create_mock_layer(self, workspace):

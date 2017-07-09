@@ -11,7 +11,7 @@ def update_field(feature_class):
 
 
 def list_workspaces_for_mxd(mxd):
-    workspaces = set()
+    workspaces = set() 
     layers = arcpy.mapping.ListLayers(mxd)
     for layer in layers:
         if layer.supports("WORKSPACEPATH"):
